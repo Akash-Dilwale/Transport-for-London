@@ -1,0 +1,4 @@
+﻿D:\My Automation Project\SpecFlowProject\SpecFlowProject\bin\Debug\net6.0
+
+
+livingdoc test-assembly "Transport for London Playwrights.dll" -t TestExecution.json
