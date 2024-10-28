@@ -145,7 +145,7 @@ namespace Transport_for_London.Hooks
         }
 
         [AfterStep]
-        public void AfterStep()
+        public async Task AfterStep()
         {
             // Log every step in the scenario
             var stepType = _scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
@@ -155,9 +155,31 @@ namespace Transport_for_London.Hooks
             {
 
                 // Log the step as passed if no errors occurred
-                test.Log(Status.Pass, $"{stepType}: {stepText}");
+                //test.Log(Status.Pass, $"{stepType}: {stepText}");
 
             }
+
+            if (_scenarioContext.TestError != null)
+                {
+                    // Capture screenshot on step failure
+                    string screenshotFolder = Path.Combine(Directory.GetCurrentDirectory(), "Screenshots");
+                    Directory.CreateDirectory(screenshotFolder);
+                    string screenshotPath = Path.Combine(screenshotFolder, $"{_scenarioContext.ScenarioInfo.Title}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+
+                    var screenshotBytes = await page.ScreenshotAsync(new PageScreenshotOptions { FullPage = true });
+                    await File.WriteAllBytesAsync(screenshotPath, screenshotBytes);
+
+                    // Log failure with screenshot
+                    test.Log(Status.Fail, $"Step Failed: {stepType} - {stepText}");
+                    test.AddScreenCaptureFromPath(screenshotPath);
+                }
+                else
+                {
+                    test.Log(Status.Pass, $"{stepType}: {stepText}");
+                }
+
+
+            
         }
 
 
