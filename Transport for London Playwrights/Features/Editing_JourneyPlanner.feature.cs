@@ -20,8 +20,8 @@ namespace Transport_for_London_Playwrights.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("EditingJourneyPlanner")]
-    public partial class EditingJourneyPlannerFeature
+    [NUnit.Framework.DescriptionAttribute("04EditingJourneyPlanner")]
+    public partial class _04EditingJourneyPlannerFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -35,7 +35,7 @@ namespace Transport_for_London_Playwrights.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "EditingJourneyPlanner", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "04EditingJourneyPlanner", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

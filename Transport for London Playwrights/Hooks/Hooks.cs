@@ -161,9 +161,12 @@ namespace Transport_for_London.Hooks
 
             if (_scenarioContext.TestError != null)
                 {
-                    // Capture screenshot on step failure
-                    string screenshotFolder = Path.Combine(Directory.GetCurrentDirectory(), "Screenshots");
-                    Directory.CreateDirectory(screenshotFolder);
+                // Capture screenshot on step failure
+                string CurrentPath = Directory.GetCurrentDirectory();
+                string thirdLevelUp = Directory.GetParent(Directory.GetParent(Directory.GetParent(CurrentPath).FullName).FullName).FullName;
+
+                string screenshotFolder = Path.Combine(thirdLevelUp, "Screenshots");
+                    //Directory.CreateDirectory(screenshotFolder);
                     string screenshotPath = Path.Combine(screenshotFolder, $"{_scenarioContext.ScenarioInfo.Title}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
 
                     var screenshotBytes = await page.ScreenshotAsync(new PageScreenshotOptions { FullPage = true });

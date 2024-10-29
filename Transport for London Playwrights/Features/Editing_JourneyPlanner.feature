@@ -1,4 +1,4 @@
-﻿Feature: EditingJourneyPlanner
+﻿Feature: 04EditingJourneyPlanner
 
 
 Scenario: Verify editing a journey

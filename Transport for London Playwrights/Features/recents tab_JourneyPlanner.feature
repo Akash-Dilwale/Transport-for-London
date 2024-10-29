@@ -1,4 +1,4 @@
-﻿Feature: ReceantTabJourneyPlanner
+﻿Feature: 05ReceantTabJourneyPlanner
 
 Scenario: Verify recents tab functionality
 	Given I have navigated to the TFL journey planner

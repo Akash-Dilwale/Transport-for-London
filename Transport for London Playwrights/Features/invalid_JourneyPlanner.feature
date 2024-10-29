@@ -1,4 +1,4 @@
-﻿Feature: InvalidJourneyPlanner
+﻿Feature: 02InvalidJourneyPlanner
 
 
 Scenario: Verify invalid destination handling
